@@ -3,6 +3,7 @@ const { floor, random } = Math
 const flatten = (list) => list.reduce((acc, row) => [...acc, ...row], [])
 const unique = (list) => list.reduce((ys, x) => ys.includes(x) ? ys : [...ys, x], [])
 
+// TODO: Correctly use selected/active words
 const reducers = {
   selectRow: (row, state) => {
     const { selectedWords, availableWords } = state
@@ -22,13 +23,17 @@ const reducers = {
   },
   nextWord: (_, state) => {
     const { activeWords, words } = state
-    const idx = floor(random() * floor(activeWords.length))
+    const idx = floor(random() * floor(activeWords.length - 1))
 
     return { ...state,
       words: [...words, activeWords[idx]],
       activeWords: [...activeWords].filter((_, i) => i !== idx)
     }
-  }
+  },
+  newGame: (_, state) => ({ ...state,
+    activeWords: [],
+    words: []
+  })
 }
 
 export const selectRow = row => ({
@@ -43,6 +48,10 @@ export const removeRow = row => ({
 
 export const nextWord = () => ({
   type: 'nextWord'
+})
+
+export const newGame = () => ({
+  type: 'newGame'
 })
 
 export default (state, { type, row }) => {

@@ -6,12 +6,13 @@ import './App.css';
 import Game from './Components/Game'
 import Words from './Components/Words'
 import words from './lib/words'
-import actions, { selectRow, removeRow, nextWord } from './Actions/selectWords'
+import actions, { selectRow, removeRow, newGame, nextWord } from './Actions/selectWords'
 
 const mapDispatchToProps = dispatch => ({
   selectWords: (row, state) => dispatch(selectRow(row, state)),
   removeWords: (row, state) => dispatch(removeRow(row, state)),
-  nextWord: (row, state) => dispatch(nextWord(row, state))
+  nextWord: (row, state) => dispatch(nextWord(row, state)),
+  newGame: (row, state) => dispatch(newGame(row, state))
 })
 
 const mapStateToProps = state => state

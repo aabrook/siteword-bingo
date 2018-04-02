@@ -1,4 +1,12 @@
 import React from 'react'
+import { connect } from 'react-redux'
+
+import actions, { selectRow, removeRow, newGame, nextWord } from '../Actions/selectWords'
+
+const mapDispatchToProps = dispatch => ({
+  nextWord: (state) => dispatch(nextWord(state)),
+  newGame: (state) => dispatch(newGame(state))
+})
 
 const Game = ({ words, nextWord, newGame }) => (
   <div>
@@ -12,4 +20,4 @@ const Game = ({ words, nextWord, newGame }) => (
 
 )
 
-export default Game
+export default connect(a => a, mapDispatchToProps)(Game)

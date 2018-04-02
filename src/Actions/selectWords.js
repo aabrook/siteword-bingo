@@ -5,7 +5,7 @@ const unique = (list) => list.reduce((ys, x) => ys.includes(x) ? ys : [...ys, x]
 
 // TODO: Correctly use selected/active words
 const reducers = {
-  selectRow: (row, state) => {
+  selectRow: (state, row) => {
     const { selectedWords, availableWords } = state
 
     return ({ ...state,
@@ -13,7 +13,7 @@ const reducers = {
       activeWords: unique(flatten(selectedWords))
     })
   },
-  removeRow: (row, state) => {
+  removeRow: (state, row) => {
     const { selectedWords } = state
 
     return ({ ...state,
@@ -21,7 +21,7 @@ const reducers = {
       activeWords: unique(flatten(selectedWords))
     })
   },
-  nextWord: (_, state) => {
+  nextWord: (state) => {
     const { activeWords, words } = state
     const idx = floor(random() * floor(activeWords.length - 1))
 
@@ -30,7 +30,7 @@ const reducers = {
       activeWords: [...activeWords].filter((_, i) => i !== idx)
     }
   },
-  newGame: (_, state) => ({ ...state,
+  newGame: (state) => ({ ...state,
     activeWords: [],
     words: []
   })
@@ -56,7 +56,7 @@ export const newGame = () => ({
 
 export default (state, { type, row }) => {
   if(reducers.hasOwnProperty(type)) {
-    return reducers[type](row, state)
+    return reducers[type](state, row)
   }
 
   return state

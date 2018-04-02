@@ -2,6 +2,7 @@
   "name": "sight-words-bingo",
   "version": "0.1.0",
   "private": true,
+  "homepage" : "http://aabrook.github.io/sightword-bingo",
   "devDependencies": {
     "react-scripts": "1.1.1"
   },

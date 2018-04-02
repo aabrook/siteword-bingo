@@ -44,10 +44,9 @@
 
 .launch {
   margin-top: 5em;
-
 }
 
-ul.words {
+ul {
   list-style-type: none;
   border-bottom: 1px solid gray;
 }

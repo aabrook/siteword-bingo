@@ -14,6 +14,7 @@ const reducers = {
       activeWords: unique(flatten(allSelectedWords))
     })
   },
+
   removeRow: (state, row) => {
     const { selectedWords } = state
     const droppedRow = selectedWords.filter((_, i) => i !== row)
@@ -23,6 +24,7 @@ const reducers = {
       activeWords: unique(flatten(droppedRow))
     })
   },
+
   nextWord: (state) => {
     const { activeWords, words } = state
     const idx = floor(random() * floor(activeWords.length - 1))
@@ -35,6 +37,7 @@ const reducers = {
       activeWords: removeSelectedWord
     }
   },
+
   newGame: (state) => ({ ...state,
     activeWords: [],
     words: []

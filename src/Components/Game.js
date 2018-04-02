@@ -8,16 +8,25 @@ const mapDispatchToProps = dispatch => ({
   newGame: (state) => dispatch(newGame(state))
 })
 
-const Game = ({ words, nextWord, newGame }) => (
+const Game = ({ activeWords, words, nextWord, newGame }) => (
   <div>
-    <button onClick={newGame}>New Game</button>
     <h2>{words[words.length - 1] || 'Ready to start'}</h2>
     <button onClick={nextWord}>Next Word</button>
-    <ul>
-      {words.map((w, i) => <li key={`used${i}`}>{w}</li>)}
-    </ul>
+    <div className="content">
+      <div>
+        <h2>Remaining Words</h2>
+        <ul>
+          {activeWords.map(w => <li key={`active_${w}`}>{w}</li>)}
+        </ul>
+      </div>
+      <div>
+        <h2>Selected Words</h2>
+        <ul>
+          {words.map((w, i) => <li key={`used_${i}`}>{w}</li>)}
+        </ul>
+      </div>
+    </div>
   </div>
-
 )
 
 export default connect(a => a, mapDispatchToProps)(Game)

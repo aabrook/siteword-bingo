@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Link, Route } from 'react-router-dom'
 import { connect } from 'react-redux'
 import logo from './logo.svg';
 import './App.css';
@@ -18,35 +18,32 @@ const mapDispatchToProps = dispatch => ({
 
 const mapStateToProps = state => state
 
-const First = connect(mapStateToProps, mapDispatchToProps)(({ selectWords, availableWords, removeWords, selectedWords }) => (
-  <span>
-  <div>
-    <h2>Available Words</h2>
-    <Words selectWord={selectWords} words={availableWords} />
-  </div>
-  <div>
-    <h2>Selected Words</h2>
-    <Words selectWord={removeWords} words={selectedWords} />
-  </div>
-  </span>
-))
+const First = connect(mapStateToProps, mapDispatchToProps)(
+  ({ selectWords, availableWords, removeWords, selectedWords }) => (
+    <span>
+      <div>
+        <h2>Available Words</h2>
+        <Words selectWord={selectWords} words={availableWords} />
+      </div>
+      <div>
+        <h2>Selected Words</h2>
+        <Words selectWord={removeWords} words={selectedWords} />
+      </div>
+      <Link to="/game">Start Game</Link>
+    </span>
+  )
+)
 
-const App = ({
-  activeWords,
-  selectWords,
-  removeWords,
-  availableWords,
-  selectedWords,
-  words,
-  nextWord
-}) => {
+const App = () => {
   return <div className="App">
     <header className="App-header">
-      <h1 className="App-title">Sight Words Bingo</h1>
+      <h1 className="App-title">
+        <Link to="/">Sight Words Bingo</Link>
+    </h1>
     </header>
     <Router>
       <div>
-        <Route path="/" component={First} />
+        <Route exact path="/" component={First} />
         <Route path="/game" component={Game} />
       </div>
     </Router>

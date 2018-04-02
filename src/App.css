@@ -31,3 +31,23 @@
   padding: 0 1em;
   display: inline
 }
+
+.content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center
+}
+
+.content div {
+  flex-grow: 1;
+}
+
+.launch {
+  margin-top: 5em;
+
+}
+
+ul.words {
+  list-style-type: none;
+  border-bottom: 1px solid gray;
+}

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { BrowserRouter as Router, Link, Route } from 'react-router-dom'
 import { connect } from 'react-redux'
 import './App.css';
@@ -16,17 +16,20 @@ const mapStateToProps = state => state
 
 const First = connect(mapStateToProps, mapDispatchToProps)(
   ({ selectWords, availableWords, removeWords, selectedWords }) => (
-    <span>
-      <div>
-        <h2>Available Words</h2>
-        <Words selectWord={selectWords} words={availableWords} />
+    <Fragment>
+      <div className="content">
+        <div>
+          <h2>Available Words</h2>
+          <Words selectWord={selectWords} words={availableWords} />
+        </div>
+        <div>
+          <h2>Selected Words</h2>
+          <Words selectWord={removeWords} words={selectedWords} />
+        </div>
       </div>
-      <div>
-        <h2>Selected Words</h2>
-        <Words selectWord={removeWords} words={selectedWords} />
-      </div>
-      <Link to="/game">Start Game</Link>
-    </span>
+
+      <Link to="/game" className="launch">Start Game</Link>
+    </Fragment>
   )
 )
 

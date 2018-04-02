@@ -5,7 +5,7 @@ import './App.css';
 
 import Game from './Components/Game'
 import Words from './Components/Words'
-import { selectRow, removeRow } from './Actions/selectWords'
+import { selectRow, removeRow } from './Actions'
 
 const mapDispatchToProps = dispatch => ({
   selectWords: (row, state) => dispatch(selectRow(row, state)),

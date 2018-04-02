@@ -8,7 +8,7 @@ import './index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 
-import actions from './Actions/selectWords'
+import actions from './Actions'
 import words from './lib/words'
 
 const loggerMiddleware = createLogger()

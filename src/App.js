@@ -1,19 +1,15 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Link, Route } from 'react-router-dom'
 import { connect } from 'react-redux'
-import logo from './logo.svg';
 import './App.css';
 
 import Game from './Components/Game'
 import Words from './Components/Words'
-import words from './lib/words'
-import actions, { selectRow, removeRow, newGame, nextWord } from './Actions/selectWords'
+import { selectRow, removeRow } from './Actions/selectWords'
 
 const mapDispatchToProps = dispatch => ({
   selectWords: (row, state) => dispatch(selectRow(row, state)),
-  removeWords: (row, state) => dispatch(removeRow(row, state)),
-  nextWord: (state) => dispatch(nextWord(state)),
-  newGame: (state) => dispatch(newGame(state))
+  removeWords: (row, state) => dispatch(removeRow(row, state))
 })
 
 const mapStateToProps = state => state

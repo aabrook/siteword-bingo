@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-import actions, { selectRow, removeRow, newGame, nextWord } from '../Actions/selectWords'
+import { newGame, nextWord } from '../Actions/selectWords'
 
 const mapDispatchToProps = dispatch => ({
   nextWord: (state) => dispatch(nextWord(state)),

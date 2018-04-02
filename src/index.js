@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter } from 'react-router-dom'
 import { render } from 'react-dom';
 import { applyMiddleware, createStore } from 'redux'
-import { Provider, connect } from 'react-redux'
+import { Provider } from 'react-redux'
 import {createLogger} from 'redux-logger'
 import './index.css';
 import App from './App';
@@ -13,12 +13,16 @@ import words from './lib/words'
 
 const loggerMiddleware = createLogger()
 
-const store = createStore(actions, {
-  selectedWords: [],
-  availableWords: words(),
-  activeWords: [],
-  words: []
-}, applyMiddleware(loggerMiddleware))
+const store = createStore(
+  actions,
+  {
+    selectedWords: [],
+    availableWords: words(),
+    activeWords: [],
+    words: []
+  },
+  applyMiddleware(loggerMiddleware)
+)
 
 render(
   <Provider store={store}>

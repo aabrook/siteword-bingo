@@ -1,10 +1,10 @@
 import React from 'react'
 import Word from './Word'
 
-const Words = ({ words, selectWord = console.log }) => words.map((row, i) =>
-  <ul cssClass="words">
+const Words = ({ words, selectWord }) => words.map((row, i) =>
+  <ul key={`words_${i}`} className="words">
     <li onClick={() => selectWord(i)}>{
-      row.map(w => <Word key={i} word={w} />)
+      row.map((w, j) => <Word key={`word_${i}_${j}`} word={w} />)
     }</li>
   </ul>)
 

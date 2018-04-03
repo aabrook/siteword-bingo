@@ -50,3 +50,12 @@ ul {
   list-style-type: none;
   border-bottom: 1px solid gray;
 }
+
+table.game-board {
+  width: 400px
+}
+
+.game-board td {
+  padding: 5px;
+  border: 1px solid gray
+}

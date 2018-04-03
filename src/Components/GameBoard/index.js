@@ -14,17 +14,19 @@ const words = (total, xs) => {
 }
 
 const GameBoard = ({ rowCount, colCount, activeWords }) =>
-  <table>
-    <tbody>
-      {
-        splitEvery(colCount, words(rowCount * colCount, activeWords))
-          .map(row =>
-            <tr>
-              {row.map(col => <td>{col}</td>)}
-            </tr>
-          )
-      }
-    </tbody>
-  </table>
+  <div className="content">
+    <table className="game-board">
+      <tbody>
+        {
+          splitEvery(colCount, words(rowCount * colCount, activeWords))
+            .map(row =>
+              <tr>
+                {row.map(col => <td>{col}</td>)}
+              </tr>
+            )
+        }
+      </tbody>
+    </table>
+  </div>
 
 export default connect(identity)(GameBoard)

@@ -6,7 +6,6 @@ import SetupGame from './Components/SetupGame'
 import GameCard from './Components/GameCard'
 import Game from './Components/Game'
 
-
 const App = () => {
   return <div className="App">
     <header className="App-header">

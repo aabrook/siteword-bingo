@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Link, Route } from 'react-router-dom'
 import './App.css';
 
 import SetupGame from './Components/SetupGame'
+import GameCard from './Components/GameCard'
 import Game from './Components/Game'
 
 
@@ -16,6 +17,7 @@ const App = () => {
     <Router>
       <div>
         <Route exact path="/" component={SetupGame} />
+        <Route path="/card" component={GameCard} />
         <Route path="/game" component={Game} />
       </div>
     </Router>

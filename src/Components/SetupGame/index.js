@@ -26,7 +26,7 @@ const SetupGame =
         </div>
       </div>
 
-      <Link to="/game" className="launch">Start Game</Link>
+      <Link to="/card" className="launch">Create Cards</Link>
     </Fragment>
   )
 

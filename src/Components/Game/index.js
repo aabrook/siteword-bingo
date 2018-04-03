@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-import { newGame, nextWord } from '../Actions'
+import { newGame, nextWord } from '../../Actions'
 
 const mapDispatchToProps = dispatch => ({
   nextWord: (state) => dispatch(nextWord(state)),

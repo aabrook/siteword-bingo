@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  font-size: 1em;
 }
 
 .App-logo {
@@ -29,13 +30,14 @@
   cursor: pointer;
   width: 4em;
   padding: 0 1em;
-  display: inline
+  display: inline;
 }
 
 .content {
   display: flex;
   flex-direction: row;
-  justify-content: center
+  text-align: left;
+  justify-content: center;
 }
 
 .content div {
@@ -58,4 +60,14 @@ table.game-board {
 .game-board td {
   padding: 5px;
   border: 1px solid gray
+}
+
+.game .content {
+  height: 30%;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  font-size: 12px;
+  overflow: scroll;
+  border-top: 1px solid gray;
 }

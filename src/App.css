@@ -44,6 +44,10 @@
   flex-grow: 1;
 }
 
+.content available-words, .content selected-words {
+  max-width: 50%;
+}
+
 .launch {
   margin-top: 5em;
 }

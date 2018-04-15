@@ -1,24 +1,19 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { identity, remove, splitEvery } from 'ramda'
+import { identity, splitEvery } from 'ramda'
 
-const { floor, random } = Math
+import { refreshCard } from '../../Actions'
 
-const words = (total, xs) => {
-  if(total <= 0 || !xs.length){
-    return []
-  }
+const mapDispatchToProps = dispatch => ({
+  refreshCard: (state) => dispatch(refreshCard(state))
+})
 
-  const idx = floor(random() * floor(xs.length - 1))
-  return [xs[idx], ...words(total - 1, remove(idx, 1, xs))]
-}
-
-const GameBoard = ({ rowCount, colCount, activeWords }) =>
+const GameBoard = ({ colCount, gameCard, refreshCard }) =>
   <div className="content">
     <table className="game-board">
       <tbody>
         {
-          splitEvery(colCount, words(rowCount * colCount, activeWords))
+          splitEvery(colCount, gameCard)
             .map(row =>
               <tr>
                 {row.map(col => <td>{col}</td>)}
@@ -27,6 +22,7 @@ const GameBoard = ({ rowCount, colCount, activeWords }) =>
         }
       </tbody>
     </table>
+    <button onClick={refreshCard}>Show Card</button>
   </div>
 
-export default connect(identity)(GameBoard)
+export default connect(identity, mapDispatchToProps)(GameBoard)

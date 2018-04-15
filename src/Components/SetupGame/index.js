@@ -17,11 +17,11 @@ const SetupGame =
   ({ selectWords, availableWords, removeWords, selectedWords }) => (
     <Fragment>
       <div className="content">
-        <div>
+        <div className="available-words">
           <h2>Available Words</h2>
           <Words selectWord={selectWords} words={availableWords} showSet={SetLabel} />
         </div>
-        <div>
+        <div className="selected-words">
           <h2>Selected Words</h2>
           <Words selectWord={removeWords} words={selectedWords} />
         </div>

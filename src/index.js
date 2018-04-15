@@ -19,7 +19,10 @@ const store = createStore(
     selectedWords: [],
     availableWords: words(),
     activeWords: [],
-    words: []
+    words: [],
+    colCount: 3,
+    rowCount: 3,
+    gameCard: []
   },
   applyMiddleware(loggerMiddleware)
 )

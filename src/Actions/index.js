@@ -25,3 +25,7 @@ export const enterRowCount = count => ({
   type: 'enterRowCount',
   count
 })
+
+export const refreshCard = () => ({
+  type: 'refreshCard',
+})

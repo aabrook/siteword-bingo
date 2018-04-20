@@ -30,7 +30,6 @@
   cursor: pointer;
   width: 4em;
   padding: 0 1em;
-  display: inline;
 }
 
 .content {
@@ -45,7 +44,6 @@
 }
 
 .content available-words, .content selected-words {
-  max-width: 50%;
 }
 
 .launch {

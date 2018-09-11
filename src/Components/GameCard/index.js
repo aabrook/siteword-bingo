@@ -18,6 +18,10 @@ const GameCard = ({ enterRowCount, enterColumnCount, activeWords, rowCount, colC
     Columns: <input onChange={enterColumnCount} placeholder="Columns" value={colCount} />
     <GameBoard />
     <Link to="/game">Start Game</Link>
+    <h2>Selected Words</h2>
+    <ul>
+      {activeWords.sort().map(word => <li>{word}</li>)}
+    </ul>
   </div>
 
 export default connect(mapStateToProps, mapDispatchToProps)(GameCard)

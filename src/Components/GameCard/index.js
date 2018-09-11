@@ -13,8 +13,9 @@ const mapDispatchToProps = dispatch => ({
 
 const GameCard = ({ enterRowCount, enterColumnCount, activeWords, rowCount, colCount }) =>
   <div>
-    <input onChange={enterRowCount} placeholder="Rows" value={rowCount} />
-    <input onChange={enterColumnCount} placeholder="Columns" value={colCount} />
+    <h1>Bingo card size</h1>
+    Rows: <input onChange={enterRowCount} placeholder="Rows" value={rowCount} />
+    Columns: <input onChange={enterColumnCount} placeholder="Columns" value={colCount} />
     <GameBoard />
     <Link to="/game">Start Game</Link>
   </div>

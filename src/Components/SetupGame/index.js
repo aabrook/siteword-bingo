@@ -11,19 +11,17 @@ const mapDispatchToProps = dispatch => ({
   removeWords: (row, state) => dispatch(removeRow(row, state))
 })
 
-const SetLabel = (i) => <p>{`Set ${i}`}</p>
-
 const SetupGame =
   ({ selectWords, availableWords, removeWords, selectedWords }) => (
     <Fragment>
       <div className="content">
         <div className="available-words">
           <h2>Available Words</h2>
-          <Words selectWord={selectWords} words={availableWords} showSet={SetLabel} />
+          <Words selectWord={selectWords} words={availableWords} label={(i) => `Add ${i}`} />
         </div>
         <div className="selected-words">
           <h2>Selected Words</h2>
-          <Words selectWord={removeWords} words={selectedWords} />
+          <Words selectWord={removeWords} words={selectedWords} label={(i) => `Remove ${i}`} />
         </div>
       </div>
 

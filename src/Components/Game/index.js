@@ -10,7 +10,7 @@ const mapDispatchToProps = dispatch => ({
 
 const Game = ({ activeWords, words, nextWord, newGame }) => (
   <div className="game">
-    <h2>{words[words.length - 1] || 'Ready to start'}</h2>
+    <h2 style={{fontSize: '42px'}}>{words[words.length - 1] || 'Ready to start'}</h2>
     <button onClick={nextWord}>Next Word</button>
     <div className="content">
       <div>

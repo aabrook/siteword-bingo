@@ -29,3 +29,6 @@ Your app is ready to be deployed!
 
 See the section about [deployment](#deployment) for more information.
 
+# Hosted
+
+This app is also hosted with [netlify](https://www.netlify.com/) at [Sightword Bingo](http://bingo.aabrook.com/)

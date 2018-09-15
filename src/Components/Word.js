@@ -1,3 +1,3 @@
 import React from 'react'
 
-export default ({ word, style = {} }) => <div style={style} className="word">{word}</div>
+export default ({ word, style = {} }) => <span style={style} className="word">{word} </span>

@@ -8,21 +8,20 @@ const Row = ({ label, words, set, selectWord, state, setState }) => {
 
   if(expanded){
     return <div>
-      <span onClick={() => selectWord(set)}>Select</span>
       {
         words.map(
-          (word, i) => <Word onClick={() => selectWord(set)} key={`word_${i}`} word={word} />
+          (word, i) => <Word key={`word_${i}`} word={word} />
         )
       }
     </div>
   }
 
-  return <div onClick={expand}>
-    + {label}
-    <span style={{fontSize: '8px', color: 'light-gray'}}>
+  return <div>
+    <button onClick={() => selectWord(set)}>{label}</button>
+    <span style={{fontSize: '16px', color: 'light-gray'}}>
       {
         words.map(
-          (word, i) => <Word style={{display: 'inline'}} onClick={() => selectWord(set)} key={`word_${i}`} word={word} />
+          (word, i) => <Word style={{display: 'inline'}} key={`word_${i}`} word={word} />
         )
       }
     </span>
@@ -30,7 +29,7 @@ const Row = ({ label, words, set, selectWord, state, setState }) => {
 }
 
 const Words = ({ words, selectWord, label = () => {} }) => words.map((row, i) =>
-  <ul key={`words_${i}`} className="words">
+  <ul style={{wordWrap: 'normal'}} key={`words_${i}`} className="words">
     <li>
       <WithState
         component={Row}

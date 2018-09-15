@@ -17,11 +17,11 @@ const SetupGame =
       <div className="content">
         <div className="available-words">
           <h2>Available Words</h2>
-          <Words selectWord={selectWords} words={availableWords} label={(i) => `Add ${i}`} />
+          <Words selectWord={selectWords} words={availableWords} label={(i) => `Add`} />
         </div>
         <div className="selected-words">
           <h2>Selected Words</h2>
-          <Words selectWord={removeWords} words={selectedWords} label={(i) => `Remove ${i}`} />
+          <Words selectWord={removeWords} words={selectedWords} label={(i) => `Remove`} />
         </div>
       </div>
 
